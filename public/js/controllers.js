@@ -1,3 +1,6 @@
-/**
- * Created by gustavo on 10/29/13.
- */
+var controllers = {};
+
+controllers.Page01Controller = function($scope)
+{
+    $scope.order = 'first';
+};

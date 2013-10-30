@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" ng-app="app">
 
     <head>
 
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <title>Web Application Template</title>
 
         <!-- These are the JavaScript includes for jQuery, Angular and Underscore -->
 
-        <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.js"></script>
-        <script type="text/javascript" src="http://underscorejs.org/underscore.js"></script>
-        <script type="text/javascript" src="http://code.angularjs.org/1.0.8/angular.js"></script>
+        <script src="http://code.jquery.com/jquery-2.0.3.js"></script>
+        <script src="http://code.angularjs.org/1.0.8/angular.js"></script>
+        <script src="http://underscorejs.org/underscore.js"></script>
 
         <!-- For the CSS we are going to use Foundation -->
 
@@ -44,19 +44,20 @@
         <link rel="stylesheet" href="public/css/normalize.css" />
         <link rel="stylesheet" href="public/css/foundation.css" />
 
+        <!-- And finally we link our application -->
+
+        <script src="public/js/controllers.js"></script>
+        <script src="public/js/application.js"></script>
+        <script src="public/js/directives.js"></script>
+        <script src="public/js/filters.js"></script>
+
     </head>
 
     <body>
 
         <p>This is our first approach to the template.</p>
 
-        <!-- This script launch the foundation functionality -->
-
-        <script>
-
-            $(document).foundation();
-
-        </script>
+        <div ng-view=""></div>
 
     </body>
 
