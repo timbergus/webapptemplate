@@ -1,3 +1,63 @@
-//
-   Created by gustavo on 10/29/13.
+// The layout is the framework of our site. Inside it we are going to put the index contents
+// surrounded by all the configurations for the HTML, CSS, scripts, meta-tags...
 
+// Equivalent to <!DOCTYPE html>
+!!!5
+
+html(ng-app="app")
+
+    head
+
+        title Art Catalog Server
+
+        meta(name="author", content="Gustavo Muñoz")
+        meta(charset="UTF-8")
+
+        // Here goes the external libraries tha needs our web application.
+
+        script(src="http://code.jquery.com/jquery-2.0.3.js")
+        script(src="http://code.angularjs.org/1.0.8/angular.js")
+        script(src="http://underscorejs.org/underscore.js")
+
+        // Here goes the controller of our web application
+
+        script(src="js/controllers.js")
+        script(src="js/application.js")
+        script(src="js/directives.js")
+
+        // Here goes the styles. We are going to use Foundation to makes
+        // things easier.
+
+        script
+            document.write('<script src=' +
+                ('__proto__' in {} ? 'public/js/vendor/zepto' : 'public/js/vendor/jquery') +
+                '.js><\/script>');
+
+        script(src="js/foundation/foundation.js")
+        script(src="js/foundation/foundation.abide.js")
+        script(src="js/foundation/foundation.alerts.js")
+        script(src="js/foundation/foundation.clearing.js")
+        script(src="js/foundation/foundation.cookie.js")
+        script(src="js/foundation/foundation.dropdown.js")
+        script(src="js/foundation/foundation.forms.js")
+        script(src="js/foundation/foundation.joyride.js")
+        script(src="js/foundation/foundation.magellan.js")
+        script(src="js/foundation/foundation.orbit.js")
+        script(src="js/foundation/foundation.placeholder.js")
+        script(src="js/foundation/foundation.reveal.js")
+        script(src="js/foundation/foundation.section.js")
+        script(src="js/foundation/foundation.tooltips.js")
+        script(src="js/foundation/foundation.topbar.js")
+        script(src="js/foundation/foundation.interchange.js")
+
+        link(rel="stylesheet", href="css/normalize.css")
+        link(rel="stylesheet", href="css/foundation.css")
+
+        // And our own styles.
+
+        link(rel="stylesheet", href="css/general.css")
+
+    body
+
+        // And here we place a block with the contents of the index.
+        block indexContents

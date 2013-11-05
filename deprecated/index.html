@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="app">
+
+    <head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>Web Application Template</title>
+
+        <!-- These are the JavaScript includes for jQuery, Angular and Underscore -->
+
+        <script src="http://code.jquery.com/jquery-2.0.3.js"></script>
+        <script src="http://code.angularjs.org/1.0.8/angular.js"></script>
+        <script src="http://underscorejs.org/underscore.js"></script>
+
+        <!-- For the CSS we are going to use Foundation -->
+
+        <script>
+
+            document.write('<script src=' +
+                    ('__proto__' in {} ? 'public/js/vendor/zepto' : 'public/js/vendor/jquery') +
+                    '.js><\/script>');
+        </script>
+
+        <script src="../public/js/foundation/foundation.js"></script>
+        <script src="../public/js/foundation/foundation.abide.js"></script>
+        <script src="../public/js/foundation/foundation.alerts.js"></script>
+        <script src="../public/js/foundation/foundation.clearing.js"></script>
+        <script src="../public/js/foundation/foundation.cookie.js"></script>
+        <script src="../public/js/foundation/foundation.dropdown.js"></script>
+        <script src="../public/js/foundation/foundation.forms.js"></script>
+        <script src="../public/js/foundation/foundation.joyride.js"></script>
+        <script src="../public/js/foundation/foundation.magellan.js"></script>
+        <script src="../public/js/foundation/foundation.orbit.js"></script>
+        <script src="../public/js/foundation/foundation.placeholder.js"></script>
+        <script src="../public/js/foundation/foundation.reveal.js"></script>
+        <script src="../public/js/foundation/foundation.section.js"></script>
+        <script src="../public/js/foundation/foundation.tooltips.js"></script>
+        <script src="../public/js/foundation/foundation.topbar.js"></script>
+        <script src="../public/js/foundation/foundation.interchange.js"></script>
+
+        <link rel="stylesheet" href="../public/css/normalize.css" />
+        <link rel="stylesheet" href="../public/css/foundation.css" />
+
+        <!-- And finally we link our application -->
+
+        <script src="../public/js/controllers.js"></script>
+        <script src="../public/js/application.js"></script>
+        <script src="../public/js/directives.js"></script>
+        <script src="../public/js/filters.js"></script>
+
+    </head>
+
+    <body>
+
+        <p>This is our first approach to the template.</p>
+
+        <div ng-view=""></div>
+
+    </body>
+
+</html>

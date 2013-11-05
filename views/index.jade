@@ -1,3 +1,11 @@
-//
-   Created by gustavo on 10/29/13.
+extend layout
 
+block indexContents
+
+    p This is our first approach to the template.
+
+    // The ng-view is the container for the partials views of our site.
+    // Instead of using the server to deal with the contents of the site
+    // Angular is going to do this in the client side.
+
+    div(ng-view="")

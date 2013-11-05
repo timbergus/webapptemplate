@@ -1,0 +1,24 @@
+{
+    "name": "webAppTemplate",
+    "description": "A template for a web application with Node and Angular",
+    "version": "0.0.1",
+    "private": true,
+    "repository":
+    {
+        "type": "git",
+        "url": "https://github.com/timbergus/webAppTemplate.git"
+    },
+    "dependencies":
+    {
+        "express": "latest",
+        "mongodb": "latest",
+        "stylus": "latest",
+        "jade": "latest",
+        "nib": "latest"
+    },
+    "engines":
+    {
+        "node": "0.10.x",
+        "npm": "1.3.x"
+    }
+}
