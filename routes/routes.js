@@ -14,7 +14,9 @@ exports.data = function(request, response)
 {
     var partialName = request.params.name;
 
-    response.require('data/' + partialName);
+    var data = require('data/' + partialName);
+
+    response.send(data);
 };
 
 exports.index = function(request, response)
