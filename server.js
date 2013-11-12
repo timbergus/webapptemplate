@@ -64,14 +64,9 @@ app.use(express.favicon(__dirname + '/public/images/favicon.png'));
 
 app.get('/partials/:name', routes.partials);
 
-
-
-
+// REST services.
 
 app.get('/data/:name', routes.data);
-
-
-
 
 // THIS SHOULD BE LAST!!!!
 //
