@@ -91,7 +91,7 @@ app.factory('RESTServer', function($http)
 
         getFirstPageExtraInfo: function()
         {
-            var promise = $http.get("data/first.json").success(function(data)
+            var promise = $http.get("./data/first.json").success(function(data)
             {
                 console.log(data);
             })
