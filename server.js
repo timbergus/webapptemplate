@@ -9,6 +9,14 @@ var express = require('express');
 
 var routes = require('./routes/routes.js');
 
+// For css files we are going to use two popular preprocessors: stylus and sass. I will include sass
+// because is a popular apache servers language too. Nib is just a tool set for stylus.
+
+var stylus = require('stylus');
+var nib = require('nib');
+
+var sass = require('node-sass');
+
 // Here we create the server object from express constructor.
 
 var app = express();
@@ -23,7 +31,31 @@ app.set('view engine', 'jade');
 app.use(express.logger('dev'));
 app.use(express.static(__dirname + '/public'));
 
-// Here we are going to include the favicon of the application.
+// This is the css compilation from stylus (.styl) files.
+
+function compile(string, path)
+{
+    return stylus(string).set('filename', path).use(nib());
+}
+
+app.use(stylus.middleware(
+    {
+        src: __dirname + '/public',     //where the styl files are
+        compile: compile
+    }
+));
+
+// This is the css compilation from sass (.scss) files.
+
+app.use(sass.middleware(
+    {
+        src: __dirname + '/public',     //where the sass files are
+        dest: __dirname + '/public',    //where css should go
+        debug: true // obvious
+    }
+));
+
+// Here, we are going to include the favicon of the application.
 
 app.use(express.favicon(__dirname + '/public/images/favicon.png'));
 
