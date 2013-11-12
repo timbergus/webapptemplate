@@ -64,6 +64,15 @@ app.use(express.favicon(__dirname + '/public/images/favicon.png'));
 
 app.get('/partials/:name', routes.partials);
 
+
+
+
+
+app.get('/data/:name', routes.data);
+
+
+
+
 // THIS SHOULD BE LAST!!!!
 //
 // When we are working with Angular in an Apache server, the base index.html

@@ -10,6 +10,13 @@ exports.partials = function(request, response)
     response.render('partials/' + partialName);
 };
 
+exports.data = function(request, response)
+{
+    var partialName = request.params.name;
+
+    response.require('data/' + partialName);
+};
+
 exports.index = function(request, response)
 {
     response.render('index');
