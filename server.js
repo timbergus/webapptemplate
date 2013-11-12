@@ -1,9 +1,15 @@
-// To create the server we are going to use Express. This makes things simpler
+// In order to create the server we are going to use Express. This makes things simpler
 // when working with REST type architecture.
 
 var express = require('express');
 
-// Here we create our variable for the server.
+// We are going to create a special "routes" file to store the routes of our server to maintain
+// cleaner the "server.js" file. Then we request the file instantiating an "object"of the "routes
+// class".
+
+var routes = require('./routes/routes.js');
+
+// Here we create the server object from express constructor.
 
 var app = express();
 
@@ -17,31 +23,32 @@ app.set('view engine', 'jade');
 app.use(express.logger('dev'));
 app.use(express.static(__dirname + '/public'));
 
-// Here goes the partials views route. What we do here is calling
-// the file inside partials folder with the name we have chosen.
+// Here we are going to include the favicon of the application.
 
-app.get('/partials/:name', function(request, response)
-{
-    var partialName = request.params.name;
+app.use(express.favicon(__dirname + '/public/images/favicon.png'));
 
-    response.render('partials/' + partialName);
-});
+// Here goes the partials views route. What we do here is calling the file inside
+// partials folder with the name we have chosen.
+
+app.get('/partials/:name', routes.partials);
 
 // THIS SHOULD BE LAST!!!!
+//
 // When we are working with Angular in an Apache server, the base index.html
 // is loaded at the beginning and all the partials views inside it into the
-// ng-view. When working with Node, to do something similar when need to load
+// ng-view. When working with Node, to do something similar we need to load
 // the index every time we send a route. This is why we use "*" to redirect
 // all the request also to the index page.
 
-app.get("*", function(request, response)
-{
-    response.render('index');
-});
+app.get("*", routes.index);
+
+// Here "port" is defined to connect the server.
 
 var port = process.env.PORT || 1337;
 
+// And here connection is launched.
+
 app.listen(port, function()
 {
-    console.log("Server working in: http://localhost:" + port);
+    console.log("Server's working at port " + port + ".");
 });

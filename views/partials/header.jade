@@ -1,0 +1,8 @@
+div.panel(ng-controller="HeaderController")
+
+    input.button.secondary(type="button", style="margin-bottom: 0;", value="{{ buttons.first }}", ng-click="loadFirstPage()")
+    input.button.secondary(type="button", style="margin-bottom: 0;", value="{{ buttons.second }}", ng-click="loadSecondPage()")
+    input.button.secondary(type="button", style="margin-bottom: 0;", value="{{ buttons.third }}", ng-click="loadThirdPage()")
+
+    input.button.secondary(type="button", style="margin-bottom: 0;", value="{{ buttons.login }}", ng-click="login()")
+    input.button.secondary(type="button", style="margin-bottom: 0;", value="{{ buttons.logout }}", ng-click="logout()")
