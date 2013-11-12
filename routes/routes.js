@@ -12,9 +12,11 @@ exports.partials = function(request, response)
 
 exports.data = function(request, response)
 {
+    console.log(request);
+
     var partialName = request.params.name;
 
-    var data = require('public/data/' + partialName);
+    var data = require(partialName);
 
     response.send(data);
 };

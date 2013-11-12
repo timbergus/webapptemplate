@@ -31,6 +31,8 @@ app.set('view engine', 'jade');
 app.use(express.logger('dev'));
 app.use(express.static(__dirname + '/public'));
 
+app.set('data', __dirname + '/public/data');
+
 // This is the css compilation from stylus (.styl) files.
 
 function compile(string, path)
