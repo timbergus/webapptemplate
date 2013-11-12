@@ -91,7 +91,7 @@ app.factory('RESTServer', function($http)
 
         getFirstPageExtraInfo: function()
         {
-            var promise = $http.get("data/first.json").success(function(data)
+            var promise = $http.get("public/data/first.json").success(function(data)
             {
                 console.log(data);
             })
@@ -108,7 +108,7 @@ app.factory('RESTServer', function($http)
         },
         getSecondPageExtraInfo: function()
         {
-            var promise = $http.get("data/second.json").success(function(data)
+            var promise = $http.get("public/data/second.json").success(function(data)
             {
                 console.log(data);
             })
@@ -125,7 +125,7 @@ app.factory('RESTServer', function($http)
         },
         getThirdPageExtraInfo: function()
         {
-            var promise = $http.get("data/third.json").success(function(data)
+            var promise = $http.get("public/data/third.json").success(function(data)
             {
                 console.log(data);
             })
