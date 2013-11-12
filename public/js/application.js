@@ -89,12 +89,16 @@ app.factory('RESTServer', function($http)
 {
     return {
 
-        getFirstPageExtraInfo: function()
+        getData: function(source)
         {
-            var promise = $http.get("data/first.json").success(function(data)
-            {
-                console.log(data);
-            })
+            var parameters = {source: 'first.json'};
+
+            return $http.post('/data', parameters)
+
+                .success(function(data)
+                {
+                    console.log(data);
+                })
                 .error(function(status)
                 {
                     console.log(status);
@@ -103,42 +107,6 @@ app.factory('RESTServer', function($http)
                 {
                     return response.data;
                 });
-
-            return promise;
-        },
-        getSecondPageExtraInfo: function()
-        {
-            var promise = $http.get("data/second.json").success(function(data)
-            {
-                console.log(data);
-            })
-                .error(function(status)
-                {
-                    console.log(status);
-                })
-                .then(function(response)
-                {
-                    return response.data;
-                });
-
-            return promise;
-        },
-        getThirdPageExtraInfo: function()
-        {
-            var promise = $http.get("data/third.json").success(function(data)
-            {
-                console.log(data);
-            })
-                .error(function(status)
-                {
-                    console.log(status);
-                })
-                .then(function(response)
-                {
-                    return response.data;
-                });
-
-            return promise;
         }
     };
 });

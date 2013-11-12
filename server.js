@@ -31,7 +31,14 @@ app.set('view engine', 'jade');
 app.use(express.logger('dev'));
 app.use(express.static(__dirname + '/public'));
 
-app.set('data', __dirname + '/public/data');
+
+
+
+app.use(express.bodyParser());
+
+
+
+
 
 // This is the css compilation from stylus (.styl) files.
 
@@ -68,7 +75,7 @@ app.get('/partials/:name', routes.partials);
 
 // REST services.
 
-app.get('/data/:name', routes.data);
+app.post('/data', routes.data);
 
 // THIS SHOULD BE LAST!!!!
 //

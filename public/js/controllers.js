@@ -19,7 +19,7 @@ controllers.FirstPageController = function($scope, RESTServer)
 
     $scope.loadDatabaseMessage = function()
     {
-        RESTServer.getFirstPageExtraInfo().then(function(data)
+        RESTServer.getData('first.json').then(function(data)
         {
             $scope.specialMessage = data;
         });
@@ -36,7 +36,7 @@ controllers.SecondPageController = function($scope, RESTServer)
 
     $scope.loadDatabaseMessage = function()
     {
-        RESTServer.getSecondPageExtraInfo().then(function(data)
+        RESTServer.getData('second.json').then(function(data)
         {
             $scope.specialMessage = data;
         });
@@ -53,7 +53,7 @@ controllers.ThirdPageController = function($scope, RESTServer)
 
     $scope.loadDatabaseMessage = function()
     {
-        RESTServer.getThirdPageExtraInfo().then(function(data)
+        RESTServer.getData('third.json').then(function(data)
         {
             $scope.specialMessage = data;
         });
