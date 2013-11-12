@@ -13,6 +13,7 @@
         "express": "latest",
         "mongodb": "latest",
         "stylus": "latest",
+        "node-sass": "latest",
         "jade": "latest",
         "nib": "latest"
     },
