@@ -6,7 +6,7 @@
 // we are going to receive an html file to show in the explorer and we also know which
 // controller is going to manipulate the contents of this file.
 
-var app = angular.module('app', [], function($routeProvider, $locationProvider)
+var app = angular.module('app', ['ngRoute'], function($routeProvider, $locationProvider)
 {
     $routeProvider.when('/firstPage',
         {
