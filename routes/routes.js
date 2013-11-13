@@ -12,9 +12,7 @@ exports.partials = function(request, response)
 
 exports.data = function(request, response)
 {
-    console.log(request.body.source);
-
-    var data = require('data/' + request.body.source);
+    var data = require('../public/data/' + request.body.source);
 
     response.send(data);
 };

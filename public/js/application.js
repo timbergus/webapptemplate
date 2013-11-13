@@ -89,10 +89,8 @@ app.factory('RESTServer', function($http)
 {
     return {
 
-        getData: function(source)
+        getData: function(parameters)
         {
-            var parameters = {source: 'first.json'};
-
             return $http.post('/data', parameters)
 
                 .success(function(data)

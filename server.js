@@ -31,14 +31,9 @@ app.set('view engine', 'jade');
 app.use(express.logger('dev'));
 app.use(express.static(__dirname + '/public'));
 
-
-
+// This module helps us to get the contents of the request from the client.
 
 app.use(express.bodyParser());
-
-
-
-
 
 // This is the css compilation from stylus (.styl) files.
 
@@ -73,7 +68,7 @@ app.use(express.favicon(__dirname + '/public/images/favicon.png'));
 
 app.get('/partials/:name', routes.partials);
 
-// REST services.
+// REST services to return JSON contents.
 
 app.post('/data', routes.data);
 

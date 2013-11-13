@@ -19,10 +19,14 @@ controllers.FirstPageController = function($scope, RESTServer)
 
     $scope.loadDatabaseMessage = function()
     {
-        RESTServer.getData('first.json').then(function(data)
-        {
-            $scope.specialMessage = data;
-        });
+        RESTServer.getData(
+            {
+                source: 'first.json'
+            })
+            .then(function(data)
+            {
+                $scope.specialMessage = data;
+            });
     }
 };
 
@@ -36,10 +40,14 @@ controllers.SecondPageController = function($scope, RESTServer)
 
     $scope.loadDatabaseMessage = function()
     {
-        RESTServer.getData('second.json').then(function(data)
-        {
-            $scope.specialMessage = data;
-        });
+        RESTServer.getData(
+            {
+                source: 'second.json'
+            })
+            .then(function(data)
+            {
+                $scope.specialMessage = data;
+            });
     }
 };
 
@@ -53,10 +61,14 @@ controllers.ThirdPageController = function($scope, RESTServer)
 
     $scope.loadDatabaseMessage = function()
     {
-        RESTServer.getData('third.json').then(function(data)
-        {
-            $scope.specialMessage = data;
-        });
+        RESTServer.getData(
+            {
+                source: 'third.json'
+            })
+            .then(function(data)
+            {
+                $scope.specialMessage = data;
+            });
     }
 };
 
