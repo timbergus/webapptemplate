@@ -1,8 +1,8 @@
 # Web Application Template
 
-This is an attempt to create a full one-page template for web applications with modern techniques. We are going to use an __MVC__ model shared among the client an the server. The client is going to hold the view and the controller, and the server is going to hold the model.
+This is an attempt to create a full __SPA__ (Single Page Application) template for web applications with modern techniques. We are going to use an __MVC__ model shared among the client an the server. The client is going to hold the view and the controller, and the server is going to hold the model.
 
-As main tools, we are going to use Angular, Foundation and Node.
+As main tools, we are going to use Angular, Foundation and Node, and the template is going to be alive in [Windows Azure Servers](http://webapptemplate.azurewebsites.net/) to play with it and test it functionality.
 
 ## Client Side
 
@@ -18,27 +18,28 @@ The server, of course, can get the data from everywhere. Mainly, the idea is usi
 
 The file structure for a Node application is the following (this structure can vary depending on the author and of course this is just the simplest structure needed for this template).
 
----> server.js<br>
-|<br>
----> package.json<br>
-|<br>
----> README.md<br>
-|<br>
----> /public<br>
-|&nbsp;|<br>
-|&nbsp;---> /js<br>
-|&nbsp;|<br>
-|&nbsp;---> /css<br>
-|&nbsp;|<br>
-|&nbsp;---> /images<br>
-|<br>
----> /views<br>
-&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;---> index.jade<br>
-&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;---> layout.jade<br>
-&nbsp;&nbsp;|<br>
-&nbsp;&nbsp;---> /partials<br>
+webAppTemplate<br>
+│<br>
+├── server.js<br>
+├── package.json<br>
+├── README.md<br>
+├── web.config // Just for Windows Azure Servers<br>
+│<br>
+├── public<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;├── js<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;├── css<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;├── images<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;└── data<br>
+│<br>
+├── views<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;├── index.jade<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;├── layout.jade<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;└── partials<br>
+│<br>
+├── routes<br>
+│<br>
+└── node_modules<br>
 
 ### VIEWS Folder
 
@@ -48,6 +49,6 @@ The Node server is going to route all the requests from the client to files insi
 
 The __routes__ folder is going to store the routes files where we are going to define the contents of the response to our client requests.
 
-### DATA Folder
+### PUBLIC Folder
 
-The __data__ folder is going to store the data to test our template.
+The __public__ folder is going to store the static data of the application like scripts, stylesheets, images, configuration files...
