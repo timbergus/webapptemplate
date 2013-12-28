@@ -1,7 +1,16 @@
+ul(class="breadcrumbs")
+    li
+        a(href="#/firstPage") {{ pageData.title }}
+    li(class="current")
+        a(href="") {{ pageData.title }} contents
+
 h1 {{ pageData.title }}
 
 p {{ pageData.contents }}
 
-input.button(type="button", value="Call Database!", ng-click="loadDatabaseMessage()")
+input.button(type="button", value="Call Database!", ng-click="loadDatabaseMessage()", style="outline: none;")
 
 div(ng-class="specialMessage && 'alert-box success'") {{ specialMessage.message }}
+
+script.
+    $(document).foundation();

@@ -32,8 +32,10 @@ app.use(express.logger('dev'));
 app.use(express.static(__dirname + '/public'));
 
 // This module helps us to get the contents of the request from the client.
+// app.use(express.bodyParser()); has been deprecated so it will be replaced by:
 
-app.use(express.bodyParser());
+app.use(express.json());
+app.use(express.urlencoded());
 
 // This is the css compilation from stylus (.styl) files.
 
@@ -90,5 +92,5 @@ var port = process.env.PORT || 1337;
 
 app.listen(port, function()
 {
-    console.log("Server's working at port " + port + ".");
+    console.log("Server's working at: http://localhost:" + port);
 });

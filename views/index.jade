@@ -2,6 +2,11 @@ extend layout
 
 block indexContents
 
+    // Here we define the header of the application including a file inside partials with
+    // "ng-include".
+
+    div(ng-include="'partials/header'")
+
     // This is the status message for all the site. we use a "ng-show" the fill the message.
     // if it is empty, the div is hidden. The "ng-animate" animates the message when show
     // and hidden.
@@ -12,17 +17,9 @@ block indexContents
     // server to deal with the contents of the site, Angular is going to do this in the client
     // side.
 
-    div(style="margin: 2em 0 0;")
-
-        // Here we define the header of the application including a file inside partials with
-        // "ng-include".
-
-        div(ng-include="'partials/header'")
-
-        // Here go the contents of the application.
-
+    div(style="margin: 2em;")
         #container.mainView(ng-view="")
 
-        // Ahn here goes the footer of the applications.
+    // And here goes the footer of the applications.
 
-        div(ng-include="'partials/footer'")
+    div(ng-include="'partials/footer'")

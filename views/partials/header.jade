@@ -1,8 +1,34 @@
-div.panel(ng-controller="HeaderController")
+nav(class="top-bar", data-topbar, ng-controller="HeaderController")
+    ul(class="title-area")
+        li(class="name")
+            h1
+                a(href="") WebAppTemplate
+        li(class="toggle-topbar menu-icon")
+            a(href="")
+                span
+    section(class="top-bar-section")
+        // Right Nav Section
+        ul(class="right")
+            li(class="divider")
+            li(class="has-dropdown")
+                a(href="") Account
+                ul(class="dropdown")
+                    li
+                        a(href="", ng-click="login()") {{ buttons.login }}
+                    li
+                        a(href="", ng-click="logout()") {{ buttons.logout }}
+        // Left Nav Section
+        ul(class="left")
+            li(class="divider")
+            li
+                a(href="#/firstPage") {{ buttons.first }}
+            li(class="divider")
+            li
+                a(href="#/secondPage") {{ buttons.second }}
+            li(class="divider")
+            li
+                a(href="#/thirdPage") {{ buttons.third }}
+            li(class="divider")
 
-    input.button.secondary(type="button", style="margin-bottom: 0;", value="{{ buttons.first }}", ng-click="loadFirstPage()")
-    input.button.secondary(type="button", style="margin-bottom: 0;", value="{{ buttons.second }}", ng-click="loadSecondPage()")
-    input.button.secondary(type="button", style="margin-bottom: 0;", value="{{ buttons.third }}", ng-click="loadThirdPage()")
-
-    input.button.secondary(type="button", style="margin-bottom: 0;", value="{{ buttons.login }}", ng-click="login()")
-    input.button.secondary(type="button", style="margin-bottom: 0;", value="{{ buttons.logout }}", ng-click="logout()")
+script.
+    $(document).foundation();
