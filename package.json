@@ -15,8 +15,7 @@
         "stylus": "latest",
         "node-sass": "latest",
         "jade": "latest",
-        "nib": "latest",
-        "newrelic": "latest"
+        "nib": "latest"
     },
     "engines":
     {
