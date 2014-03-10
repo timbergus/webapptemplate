@@ -1,6 +1,6 @@
 {
     "name": "webAppTemplate",
-    "description": "A template for a web application with Node and Angular",
+    "description": "A template for a web application with Node and Angular.js",
     "version": "0.0.2",
     "private": true,
     "repository":
@@ -15,7 +15,8 @@
         "stylus": "latest",
         "node-sass": "latest",
         "jade": "latest",
-        "nib": "latest"
+        "nib": "latest",
+        "newrelic": "latest"
     },
     "engines":
     {
